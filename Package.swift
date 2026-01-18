@@ -17,18 +17,14 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(path: "../../swift-primitives/swift-standard-library-extensions"),
+        .package(path: "../../swift-primitives/swift-standard-library-extensions")
     ],
     targets: [
         .target(
             name: "ECMA 48",
             dependencies: [
-                .product(name: "Standard Library Extensions", package: "swift-standard-library-extensions"),
+                .product(name: "Standard Library Extensions", package: "swift-standard-library-extensions")
             ]
-        ),
-        .testTarget(
-            name: "ECMA 48".tests,
-            dependencies: ["ECMA 48"]
         )
     ],
     swiftLanguageModes: [.v6]
