@@ -1,0 +1,11 @@
+# .github/metadata.yaml
+# Triaged by AI-assisted bulk pass (2026-04-29).
+description: "Swift implementation of ECMA-48: Control Functions for Coded Character Sets."
+topics:
+  - standards
+  - ecma
+  - ecma-48
+  - terminal
+  - ansi-escape
+  - control-codes
+homepage: "https://swift-institute.org"
