@@ -9,3 +9,5 @@ topics:
   - ansi-escape
   - control-codes
 homepage: "https://swift-institute.org"
+readme:
+  family: E
