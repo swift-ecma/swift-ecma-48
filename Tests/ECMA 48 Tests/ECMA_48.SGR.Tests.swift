@@ -10,6 +10,7 @@
 // ===----------------------------------------------------------------------===//
 
 import Testing
+
 @testable import ECMA_48
 
 extension ECMA_48.SGR {
@@ -41,8 +42,14 @@ extension ECMA_48.SGR {
             }
 
             @Test func `rgb true color sequences are correct`() {
-                #expect(ECMA_48.SGR.Color.rgb(r: 255, g: 128, b: 0).foreground == "\u{001B}[38;2;255;128;0m")
-                #expect(ECMA_48.SGR.Color.rgb(r: 255, g: 128, b: 0).background == "\u{001B}[48;2;255;128;0m")
+                #expect(
+                    ECMA_48.SGR.Color.rgb(r: 255, g: 128, b: 0).foreground
+                        == "\u{001B}[38;2;255;128;0m"
+                )
+                #expect(
+                    ECMA_48.SGR.Color.rgb(r: 255, g: 128, b: 0).background
+                        == "\u{001B}[48;2;255;128;0m"
+                )
             }
         }
     }

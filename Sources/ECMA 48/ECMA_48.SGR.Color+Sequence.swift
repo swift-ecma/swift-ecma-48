@@ -21,9 +21,11 @@ extension ECMA_48.SGR.Color {
                 // SGR 30-37 for normal foreground
                 return "\(ECMA_48.csi)\(30 + p.rawValue)m"
             }
+
         case .extended(let n):
             // SGR 38;5;n for 256-color foreground
             return "\(ECMA_48.csi)38;5;\(n)m"
+
         case .rgb(let r, let g, let b):
             // SGR 38;2;r;g;b for 24-bit foreground
             return "\(ECMA_48.csi)38;2;\(r);\(g);\(b)m"
@@ -41,9 +43,11 @@ extension ECMA_48.SGR.Color {
                 // SGR 40-47 for normal background
                 return "\(ECMA_48.csi)\(40 + p.rawValue)m"
             }
+
         case .extended(let n):
             // SGR 48;5;n for 256-color background
             return "\(ECMA_48.csi)48;5;\(n)m"
+
         case .rgb(let r, let g, let b):
             // SGR 48;2;r;g;b for 24-bit background
             return "\(ECMA_48.csi)48;2;\(r);\(g);\(b)m"
