@@ -1,14 +1,14 @@
-// swift-tools-version: 6.3.3
+// swift-tools-version: 6.4
 
 import PackageDescription
 
 let package = Package(
     name: "swift-ecma-48",
     platforms: [
-        .macOS("27"),
-        .iOS("27"),
-        .tvOS("27"),
-        .watchOS("27")
+        .macOS(.v27),
+        .iOS(.v27),
+        .tvOS(.v27),
+        .watchOS(.v27),
     ],
     products: [
         .library(
@@ -17,19 +17,25 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-primitives/swift-standard-library-extensions.git", branch: "main")
+        .package(
+            url: "https://github.com/swift-primitives/swift-standard-library-extensions.git",
+            branch: "main"
+        )
     ],
     targets: [
         .target(
             name: "ECMA 48",
             dependencies: [
-                .product(name: "Standard Library Extensions", package: "swift-standard-library-extensions")
+                .product(
+                    name: "Standard Library Extensions",
+                    package: "swift-standard-library-extensions"
+                )
             ]
         ),
         .testTarget(
             name: "ECMA 48 Tests",
             dependencies: [
-                "ECMA 48",
+                "ECMA 48"
             ]
         ),
     ],
