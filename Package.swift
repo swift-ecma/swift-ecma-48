@@ -35,16 +35,12 @@ let package = Package(
         .testTarget(
             name: "ECMA 48 Tests",
             dependencies: [
-                "ECMA 48"
+                .target(name: "ECMA 48")
             ]
         ),
     ],
     swiftLanguageModes: [.v6]
 )
-
-extension String {
-    var tests: Self { self + " Tests" }
-}
 
 for target in package.targets where ![.system, .binary, .plugin, .macro].contains(target.type) {
     let ecosystem: [SwiftSetting] = [
