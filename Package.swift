@@ -17,6 +17,7 @@ let package = Package(
         )
     ],
     dependencies: [
+        .package(url: "https://github.com/swift-atoms/swift-terminal.git", branch: "main"),
         .package(
             url: "https://github.com/swift-atoms/swift-standard-library-extensions.git",
             branch: "main"
@@ -26,6 +27,7 @@ let package = Package(
         .target(
             name: "ECMA 48",
             dependencies: [
+                .product(name: "Terminal", package: "swift-terminal"),
                 .product(
                     name: "Standard Library Extensions",
                     package: "swift-standard-library-extensions"
