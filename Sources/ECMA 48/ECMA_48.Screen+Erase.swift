@@ -32,11 +32,13 @@ extension ECMA_48.Screen {
 extension ECMA_48.Screen {
 
     public static func scrollUp(_ n: Int = 1) -> String {
-        "\(ECMA_48.csi)\(n)S"
+        precondition(n >= 0, "ECMA-48 count must not be negative: \(n)")
+        return n == 0 ? "" : "\(ECMA_48.csi)\(n)S"
     }
 
     public static func scrollDown(_ n: Int = 1) -> String {
-        "\(ECMA_48.csi)\(n)T"
+        precondition(n >= 0, "ECMA-48 count must not be negative: \(n)")
+        return n == 0 ? "" : "\(ECMA_48.csi)\(n)T"
     }
 }
 
