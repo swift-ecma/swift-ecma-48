@@ -29,6 +29,10 @@ extension ECMA_48.SGR.Color.Palette {
     }
 
     public var base: Self {
-        isBright ? Self(rawValue: rawValue - 8)! : self
+        guard isBright else { return self }
+        guard let base = Self(rawValue: rawValue - 8) else {
+            preconditionFailure("A bright palette color has a base color 8 below it")
+        }
+        return base
     }
 }

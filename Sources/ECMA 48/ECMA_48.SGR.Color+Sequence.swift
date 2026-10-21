@@ -3,13 +3,12 @@ extension ECMA_48.SGR.Color {
     public var foreground: String {
         switch self {
         case .palette(let p):
-            if p.isBright {
-
-                return "\(ECMA_48.csi)\(90 + p.base.rawValue)m"
-            } else {
+            guard p.isBright else {
 
                 return "\(ECMA_48.csi)\(30 + p.rawValue)m"
             }
+
+            return "\(ECMA_48.csi)\(90 + p.base.rawValue)m"
 
         case .extended(let n):
 
@@ -24,13 +23,12 @@ extension ECMA_48.SGR.Color {
     public var background: String {
         switch self {
         case .palette(let p):
-            if p.isBright {
-
-                return "\(ECMA_48.csi)\(100 + p.base.rawValue)m"
-            } else {
+            guard p.isBright else {
 
                 return "\(ECMA_48.csi)\(40 + p.rawValue)m"
             }
+
+            return "\(ECMA_48.csi)\(100 + p.base.rawValue)m"
 
         case .extended(let n):
 
