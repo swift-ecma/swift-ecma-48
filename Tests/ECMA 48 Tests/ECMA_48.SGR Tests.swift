@@ -2,7 +2,9 @@ import Testing
 
 @testable import ECMA_48
 
-extension ECMA_48.SGR {
+enum `ECMA_48.SGR Tests` {}
+
+extension `ECMA_48.SGR Tests` {
     @Suite struct `SGR Tests` {
         @Suite struct Unit {
             @Test func `attribute sequences are correct`() {
@@ -44,7 +46,9 @@ extension ECMA_48.SGR {
     }
 }
 
-extension ECMA_48.Cursor {
+enum `ECMA_48.Cursor Tests` {}
+
+extension `ECMA_48.Cursor Tests` {
     @Suite struct `Cursor Tests` {
         @Suite struct Unit {
             @Test func `movement sequences are correct`() {
@@ -67,7 +71,9 @@ extension ECMA_48.Cursor {
     }
 }
 
-extension ECMA_48.Screen {
+enum `ECMA_48.Screen Tests` {}
+
+extension `ECMA_48.Screen Tests` {
     @Suite struct `Screen Tests` {
         @Suite struct Unit {
             @Test func `erase sequences are correct`() {

@@ -1,7 +1,9 @@
 import ECMA_48
 import Testing
 
-extension Terminal.Mode.Screen {
+enum `Terminal.Mode.Screen Tests` {}
+
+extension `Terminal.Mode.Screen Tests` {
     @Suite
     struct `Screen mode sequences enable and disable the alternate buffer` {
         @Suite struct `Alternate screen enable and disable use private mode 1049` {}
@@ -9,7 +11,7 @@ extension Terminal.Mode.Screen {
     }
 }
 
-extension Terminal.Mode.Screen.`Screen mode sequences enable and disable the alternate buffer`.`Alternate screen enable and disable use private mode 1049` {
+extension `Terminal.Mode.Screen Tests`.`Screen mode sequences enable and disable the alternate buffer`.`Alternate screen enable and disable use private mode 1049` {
     @Test
     func `Enable is DEC private mode 1049h`() {
         #expect(Terminal.Mode.Screen.enable == "\u{1B}[?1049h")
@@ -21,7 +23,7 @@ extension Terminal.Mode.Screen.`Screen mode sequences enable and disable the alt
     }
 }
 
-extension Terminal.Mode.Screen.`Screen mode sequences enable and disable the alternate buffer`.`Screen mode sequences share the CSI prefix and differ in their final byte` {
+extension `Terminal.Mode.Screen Tests`.`Screen mode sequences enable and disable the alternate buffer`.`Screen mode sequences share the CSI prefix and differ in their final byte` {
     @Test
     func `Enable and disable differ only in final byte`() {
         #expect(Terminal.Mode.Screen.enable.dropLast() == Terminal.Mode.Screen.disable.dropLast())
