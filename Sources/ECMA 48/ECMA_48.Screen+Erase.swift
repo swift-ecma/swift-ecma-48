@@ -15,14 +15,6 @@ extension ECMA_48.Screen {
         "\(ECMA_48.csi)\(mode.rawValue)J"
     }
 
-    public enum EraseLine: Int, Sendable {
-
-        case toEnd = 0
-
-        case toBeginning = 1
-
-        case all = 2
-    }
 
     public static func eraseLine(_ mode: EraseLine = .all) -> String {
         "\(ECMA_48.csi)\(mode.rawValue)K"
