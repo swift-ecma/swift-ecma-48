@@ -6,9 +6,13 @@ enum `Terminal.Mode.Screen Tests` {}
 extension `Terminal.Mode.Screen Tests` {
     @Suite
     struct `Screen mode sequences enable and disable the alternate buffer` {
-        @Suite struct `Alternate screen enable and disable use private mode 1049` {}
-        @Suite struct `Screen mode sequences share the CSI prefix and differ in their final byte` {}
     }
+}
+
+extension `Terminal.Mode.Screen Tests`.`Screen mode sequences enable and disable the alternate buffer` {
+    @Suite struct `Alternate screen enable and disable use private mode 1049` {}
+
+    @Suite struct `Screen mode sequences share the CSI prefix and differ in their final byte` {}
 }
 
 extension `Terminal.Mode.Screen Tests`.`Screen mode sequences enable and disable the alternate buffer`.`Alternate screen enable and disable use private mode 1049` {
