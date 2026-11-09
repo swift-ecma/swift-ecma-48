@@ -24,5 +24,14 @@ extension `ECMA_48 Zero Count Tests` {
             #expect(ECMA_48.Cursor.up(1) == "\(ECMA_48.csi)1A")
             #expect(ECMA_48.Screen.scrollDown(2) == "\(ECMA_48.csi)2T")
         }
+
+        @Test
+        func `counts and positions are unsigned`() {
+            let count: UInt = 3
+            #expect(ECMA_48.Cursor.back(count) == "\(ECMA_48.csi)3D")
+            #expect(ECMA_48.Screen.scrollUp(count) == "\(ECMA_48.csi)3S")
+            #expect(ECMA_48.Cursor.column(count) == "\(ECMA_48.csi)3G")
+            #expect(ECMA_48.Cursor.position(row: count, column: 0) == "\(ECMA_48.csi)3;0H")
+        }
     }
 }
